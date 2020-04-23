@@ -14,8 +14,8 @@ func InitIrc(nickname string, password string) {
 	irccon := irc.IRC(ircnick1, "IRCTestSSL")
 	irccon.Password = password
 
-	irccon.VerboseCallbackHandler = true
-	irccon.Debug = true
+	irccon.VerboseCallbackHandler = false
+	irccon.Debug = false
 	irccon.UseTLS = false
 	irccon.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 	irccon.AddCallback("001", func(e *irc.Event) {
